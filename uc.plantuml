@@ -3,20 +3,18 @@ title: Exercice 1 : Diagramme des UC en plantUML
 --
 @startuml
 
-usecase u as "gerer ses chantiers"
-usecase c as "gerer ses artisants"
-usecase d as "gerer quels artisants sont affectes a quel chantier"
-usecase t as "affecté à plusieurs chantiers"
+usecase a as "Gérer ses chantiers (date de début, de fin, adresse, …​)"
+usecase b as "Gérer ses artisans (salaire horaire, coordonnées, …​)"
+usecase c as "Gérer quels artisans sont affectés à \n quels chantiers (nombre d’heures effectuées par \n tel artisan sur tel chantier, début et fin de mission sur un chantier, …​)"
+usecase d as "Calculer automatiquement la paye \n d’un artisan donné pour un chantier donné"
 
-actor Entreprise
-
-'Pour aligner les 2 acteurs :
+actor Entreprise 
 
 
-Entreprise -> d
-Entreprise -> u
+Entreprise -> a
+Entreprise -> b
 Entreprise -> c
-artisant -> t
+Entreprise -> d
 
 @enduml
 ```

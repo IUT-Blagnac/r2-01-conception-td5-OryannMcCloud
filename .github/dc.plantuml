@@ -1,0 +1,60 @@
+@startuml tp
+hide circle
+
+
+
+
+
+
+skinparam classAttributeIconSize 0
+
+skinparam roundcorner 5
+
+skinparam class {
+	BackgroundColor #E8F7FE|6FCFFB
+	BorderColor Black
+	ArrowColor Black
+	FontColor Black
+	FontSize 12
+	FontName Helvetica
+}
+
+skinparam arrow {
+    MessageAlign center
+}
+
+
+class Artisan {
+    - salaire
+    - coordonnees
+    + double getPayeArtisan()
+    + String getCoordonnees()
+    + double setCoordonnes()
+}
+
+class Specialite {
+    - nom
+    + String getSpecialite()
+    + String setSpecialite()
+}
+
+class Chantier {
+    - date_deb
+    - date_fin
+    - adresse
+    + String getAdresse()
+}
+
+class Travailler {
+    - nb_heures
+    - date_deb
+    - date_fin
+    + double getPaiementChantier()
+}
+
+
+Artisan "*" -- "1" Specialite : Avoir
+Artisan "*" -right- "*" Chantier 
+(Artisan, Chantier) .. Travailler
+
+@enduml
